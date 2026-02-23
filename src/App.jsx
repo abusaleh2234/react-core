@@ -1,6 +1,13 @@
 
+import { Suspense } from 'react'
 import './App.css'
+import Player from './player'
 import Counter from './state'
+import Users from './users'
+
+
+const loadUsers = fetch("https://jsonplaceholder.typicode.com/users")
+.then(res => res.json())
 
 function App() {
 
@@ -16,6 +23,10 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+      <Suspense fallback={<p>loading...</p>}>
+        <Users loadUsers={loadUsers}></Users>
+      </Suspense>
+      <Player></Player>
     <Counter></Counter>
       <button onClick={handleClick}>Click Me</button>
       <button onClick={() => handleClick2()}>Click Me 2</button>
