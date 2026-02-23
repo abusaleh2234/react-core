@@ -4,13 +4,19 @@ import './App.css'
 import Player from './player'
 import Counter from './state'
 import Users from './users'
+import Friends from './Friends'
 
 
 const loadUsers = fetch("https://jsonplaceholder.typicode.com/users")
 .then(res => res.json())
 
-function App() {
+const fetchFriends = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users")
+  return res.json()
+}
 
+function App() {
+  const loadFriends = fetchFriends()
   function handleClick() {
     alert("Click Me")
   }
@@ -23,9 +29,12 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
-      <Suspense fallback={<p>loading...</p>}>
-        <Users loadUsers={loadUsers}></Users>
+      <Suspense fallback={<h4>friends are loading ...</h4>}>
+        <Friends loadFriends={loadFriends}></Friends>
       </Suspense>
+      {/* <Suspense fallback={<p>loading...</p>}>
+        <Users loadUsers={loadUsers}></Users>
+      </Suspense> */}
       <Player></Player>
     <Counter></Counter>
       <button onClick={handleClick}>Click Me</button>
