@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
-      <Posts></Posts>
+      {/* <Posts></Posts> */}
       {/* <Suspense fallback={<h4>friends are loading ...</h4>}>
         <Friends loadFriends={loadFriends}></Friends>
       </Suspense> */}
