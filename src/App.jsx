@@ -5,6 +5,7 @@ import Player from './player'
 import Counter from './state'
 import Users from './users'
 import Friends from './Friends'
+import Posts from './Posts'
 
 
 const loadUsers = fetch("https://jsonplaceholder.typicode.com/users")
@@ -29,9 +30,10 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
-      <Suspense fallback={<h4>friends are loading ...</h4>}>
+      <Posts></Posts>
+      {/* <Suspense fallback={<h4>friends are loading ...</h4>}>
         <Friends loadFriends={loadFriends}></Friends>
-      </Suspense>
+      </Suspense> */}
       {/* <Suspense fallback={<p>loading...</p>}>
         <Users loadUsers={loadUsers}></Users>
       </Suspense> */}
