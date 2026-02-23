@@ -6,6 +6,7 @@ import Counter from './state'
 import Users from './users'
 import Friends from './Friends'
 import Posts from './Posts'
+import Toggle from './Toggle'
 
 
 const loadUsers = fetch("https://jsonplaceholder.typicode.com/users")
@@ -37,12 +38,13 @@ function App() {
       {/* <Suspense fallback={<p>loading...</p>}>
         <Users loadUsers={loadUsers}></Users>
       </Suspense> */}
+      <Toggle></Toggle>
       <Player></Player>
     <Counter></Counter>
-      <button onClick={handleClick}>Click Me</button>
+      {/* <button onClick={handleClick}>Click Me</button>
       <button onClick={() => handleClick2()}>Click Me 2</button>
       <button onClick={function handleClick3(){alert("click 3")}}>Click Me 3</button>
-      <button onClick={() => handleClick4()}>Click Me 4</button>
+      <button onClick={() => handleClick4()}>Click Me 4</button> */}
     </>
   )
 }
